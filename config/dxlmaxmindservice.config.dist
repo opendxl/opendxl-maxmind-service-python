@@ -1,0 +1,37 @@
+###############################################################################
+## MaxMind Geolocation Service settings
+###############################################################################
+
+[MaxMindDatabase]
+
+# The path to a local MaxMind database to be used
+# If left blank the free MaxMind GeoLite database will be automatically downloaded and updated
+databasePath=
+
+# The number of hours between database updates when downloading the GeoLite database from MaxMind
+# Only takes effect if the databasePath is not set
+databaseUpdateInterval=24
+
+###############################################################################
+## Settings for thread pools
+###############################################################################
+
+[MessageCallbackPool]
+
+# The queue size for invoking DXL message callbacks
+# (optional, defaults to 1000)
+;queueSize=1000
+
+# The number of threads available to invoke DXL message callbacks
+# (optional, defaults to 10)
+;threadCount=10
+
+[IncomingMessagePool]
+
+# The queue size for incoming DXL messages
+# (optional, defaults to 1000)
+;queueSize=1000
+
+# The number of threads available to handle incoming DXL messages
+# (optional, defaults to 10)
+;threadCount=10
