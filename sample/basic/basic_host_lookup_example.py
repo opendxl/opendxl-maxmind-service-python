@@ -28,7 +28,7 @@ with DxlClient(config) as client:
     # Send request that will trigger request callback 'maxmind_service_hostlookup'
     request_topic = "/opendxl-maxmind/service/geolocation/host_lookup"
     req = Request(request_topic)
-    MessageUtils.dict_to_json_payload(req, {"host":"8.8.8.8"})
+    MessageUtils.dict_to_json_payload(req, {"host": "8.8.8.8"})
     res = client.sync_request(req, timeout=30)
 
     if res.message_type != Message.MESSAGE_TYPE_ERROR:

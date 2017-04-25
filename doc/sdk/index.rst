@@ -1,5 +1,5 @@
-MaxMind Geolocation Service
-===========================
+MaxMind Geolocation DXL Service
+===============================
 
 Introduction
 ------------

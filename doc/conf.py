@@ -29,8 +29,8 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = "MaxMind Geolocation Service"
-copyright = "Copyright 2017"
+project = "MaxMind Geolocation DXL Service"
+copyright = "2017, McAfee LLC"
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the

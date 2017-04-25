@@ -73,7 +73,7 @@ MaxMind Geolocation Service (dxlmaxmindservice.config)
         | databasePath           | no       | The path to a local MaxMind database. If left blank the database     |
         |                        |          | will automatically be downloaded from MaxMind.                       |
         +------------------------+----------+----------------------------------------------------------------------+
-        | databaseUpdateInterval | no       | The interval(in hours) to check for updates to the MaxMind database. |
+        | databaseUpdateInterval | no       | The interval (in hours) to check for updates to the MaxMind database.|
         |                        |          | Updates only happen if the database is being downloaded from MaxMind.|
         +------------------------+----------+----------------------------------------------------------------------+
 

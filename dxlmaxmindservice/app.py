@@ -82,7 +82,8 @@ class MaxMindGeolocationService(Application):
         logger.info("Registering service: {0}".format("maxmind_geolocation_service"))
         service = ServiceRegistrationInfo(self._dxl_client, "/opendxl-maxmind/service/geolocation")
         logger.info("Registering request callback: {0}".format("maxmind_service_hostlookup"))
-        self.add_request_callback(service, "/opendxl-maxmind/service/geolocation/host_lookup", MaxMindHostLookupRequestCallback(self), True)
+        self.add_request_callback(service, "/opendxl-maxmind/service/geolocation/host_lookup",
+                                  MaxMindHostLookupRequestCallback(self), True)
         self.register_service(service)
 
     def destroy(self):
