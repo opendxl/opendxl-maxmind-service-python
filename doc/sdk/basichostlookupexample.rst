@@ -124,7 +124,7 @@ The majority of the sample code is shown below:
 
             logger.info("Connected to DXL fabric.")
 
-            # Send request that will trigger request callback 'maxmind_service_hostlookup'
+            # Create and send request
             request_topic = "/opendxl-maxmind/service/geolocation/host_lookup"
             req = Request(request_topic)
             MessageUtils.dict_to_json_payload(req, {"ip":"8.8.8.8"})
@@ -142,7 +142,7 @@ The majority of the sample code is shown below:
 After connecting to the DXL fabric, a `request message` is created with a topic that targets the "host lookup" method
 of the MaxMind DXL service.
 
-The next step is to set the `payload` of the request message. The contents of the payload include the `ip`
+The next step is to set the `payload` of the request message. The contents of the payload include the `IP address`
 to look up (in this case, 8.8.8.8, a google DNS IP).
 
 The final step is to perform a `synchronous request` via the DXL fabric. If the `response message` is not an error
