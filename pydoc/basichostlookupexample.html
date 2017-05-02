@@ -1,0 +1,270 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Basic Host Lookup Example &#8212; MaxMind Geolocation DXL Service 0.1.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="dxlmaxmindservice package" href="dxlmaxmindservice.html" />
+    <link rel="prev" title="Samples Configuration" href="sampleconfig.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="dxlmaxmindservice.html" title="dxlmaxmindservice package"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="sampleconfig.html" title="Samples Configuration"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">MaxMind Geolocation DXL Service 0.1.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="basic-host-lookup-example">
+<h1>Basic Host Lookup Example<a class="headerlink" href="#basic-host-lookup-example" title="Permalink to this headline">¶</a></h1>
+<p>This sample invokes and displays the results of a MaxMind &#8220;host lookup&#8221; via DXL.</p>
+<dl class="docutils">
+<dt>For more information see:</dt>
+<dd><a class="reference external" href="http://dev.maxmind.com/geoip/geoip2/geolite2/">http://dev.maxmind.com/geoip/geoip2/geolite2/</a></dd>
+</dl>
+<div class="section" id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>The samples configuration step has been completed (see <a class="reference internal" href="sampleconfig.html"><span class="doc">Samples Configuration</span></a>)</li>
+<li>The MaxMind DXL service is running (see <a class="reference internal" href="running.html"><span class="doc">Running</span></a>)</li>
+</ul>
+</div>
+<div class="section" id="running">
+<h2>Running<a class="headerlink" href="#running" title="Permalink to this headline">¶</a></h2>
+<p>To run this sample execute the <code class="docutils literal"><span class="pre">sample/basic/basic_host_lookup_example.py</span></code> script as follows:</p>
+<blockquote>
+<div><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">sample</span><span class="o">/</span><span class="n">basic</span><span class="o">/</span><span class="n">basic_host_lookup_example</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>The output should appear similar to the following:</p>
+<blockquote>
+<div><div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;city&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;geoname_id&quot;</span><span class="p">:</span> <span class="mi">5375480</span><span class="p">,</span>
+        <span class="s2">&quot;names&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;de&quot;</span><span class="p">:</span> <span class="s2">&quot;Mountain View&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;en&quot;</span><span class="p">:</span> <span class="s2">&quot;Mountain View&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;fr&quot;</span><span class="p">:</span> <span class="s2">&quot;Mountain View&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;ja&quot;</span><span class="p">:</span> <span class="s2">&quot;</span><span class="se">\u30de\u30a6\u30f3\u30c6\u30f3\u30d3\u30e5\u30fc</span><span class="s2">&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;ru&quot;</span><span class="p">:</span> <span class="s2">&quot;</span><span class="se">\u041c\u0430\u0443\u043d\u0442\u0438\u043d</span><span class="s2">-</span><span class="se">\u0412\u044c\u044e</span><span class="s2">&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;zh-CN&quot;</span><span class="p">:</span> <span class="s2">&quot;</span><span class="se">\u8292\u5ef7\u7ef4\u5c24</span><span class="s2">&quot;</span>
+        <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;continent&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;code&quot;</span><span class="p">:</span> <span class="s2">&quot;NA&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;geoname_id&quot;</span><span class="p">:</span> <span class="mi">6255149</span><span class="p">,</span>
+        <span class="s2">&quot;names&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;de&quot;</span><span class="p">:</span> <span class="s2">&quot;Nordamerika&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;en&quot;</span><span class="p">:</span> <span class="s2">&quot;North America&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;es&quot;</span><span class="p">:</span> <span class="s2">&quot;Norteam</span><span class="se">\u00e9</span><span class="s2">rica&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;fr&quot;</span><span class="p">:</span> <span class="s2">&quot;Am</span><span class="se">\u00e9</span><span class="s2">rique du Nord&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;ja&quot;</span><span class="p">:</span> <span class="s2">&quot;</span><span class="se">\u5317\u30a2\u30e1\u30ea\u30ab</span><span class="s2">&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;pt-BR&quot;</span><span class="p">:</span> <span class="s2">&quot;Am</span><span class="se">\u00e9</span><span class="s2">rica do Norte&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;ru&quot;</span><span class="p">:</span> <span class="s2">&quot;</span><span class="se">\u0421\u0435\u0432\u0435\u0440\u043d\u0430\u044f</span><span class="s2"> </span><span class="se">\u0410\u043c\u0435\u0440\u0438\u043a\u0430</span><span class="s2">&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;zh-CN&quot;</span><span class="p">:</span> <span class="s2">&quot;</span><span class="se">\u5317\u7f8e\u6d32</span><span class="s2">&quot;</span>
+        <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;country&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;geoname_id&quot;</span><span class="p">:</span> <span class="mi">6252001</span><span class="p">,</span>
+        <span class="s2">&quot;iso_code&quot;</span><span class="p">:</span> <span class="s2">&quot;US&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;names&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;de&quot;</span><span class="p">:</span> <span class="s2">&quot;USA&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;en&quot;</span><span class="p">:</span> <span class="s2">&quot;United States&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;es&quot;</span><span class="p">:</span> <span class="s2">&quot;Estados Unidos&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;fr&quot;</span><span class="p">:</span> <span class="s2">&quot;</span><span class="se">\u00c9</span><span class="s2">tats-Unis&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;ja&quot;</span><span class="p">:</span> <span class="s2">&quot;</span><span class="se">\u30a2\u30e1\u30ea\u30ab\u5408\u8846\u56fd</span><span class="s2">&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;pt-BR&quot;</span><span class="p">:</span> <span class="s2">&quot;Estados Unidos&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;ru&quot;</span><span class="p">:</span> <span class="s2">&quot;</span><span class="se">\u0421\u0428\u0410</span><span class="s2">&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;zh-CN&quot;</span><span class="p">:</span> <span class="s2">&quot;</span><span class="se">\u7f8e\u56fd</span><span class="s2">&quot;</span>
+        <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;location&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;accuracy_radius&quot;</span><span class="p">:</span> <span class="mi">1000</span><span class="p">,</span>
+        <span class="s2">&quot;latitude&quot;</span><span class="p">:</span> <span class="mf">37.386</span><span class="p">,</span>
+        <span class="s2">&quot;longitude&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mf">122.0838</span><span class="p">,</span>
+        <span class="s2">&quot;metro_code&quot;</span><span class="p">:</span> <span class="mi">807</span><span class="p">,</span>
+        <span class="s2">&quot;time_zone&quot;</span><span class="p">:</span> <span class="s2">&quot;America/Los_Angeles&quot;</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;postal&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;code&quot;</span><span class="p">:</span> <span class="s2">&quot;94035&quot;</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;registered_country&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;geoname_id&quot;</span><span class="p">:</span> <span class="mi">6252001</span><span class="p">,</span>
+        <span class="s2">&quot;iso_code&quot;</span><span class="p">:</span> <span class="s2">&quot;US&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;names&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;de&quot;</span><span class="p">:</span> <span class="s2">&quot;USA&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;en&quot;</span><span class="p">:</span> <span class="s2">&quot;United States&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;es&quot;</span><span class="p">:</span> <span class="s2">&quot;Estados Unidos&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;fr&quot;</span><span class="p">:</span> <span class="s2">&quot;</span><span class="se">\u00c9</span><span class="s2">tats-Unis&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;ja&quot;</span><span class="p">:</span> <span class="s2">&quot;</span><span class="se">\u30a2\u30e1\u30ea\u30ab\u5408\u8846\u56fd</span><span class="s2">&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;pt-BR&quot;</span><span class="p">:</span> <span class="s2">&quot;Estados Unidos&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;ru&quot;</span><span class="p">:</span> <span class="s2">&quot;</span><span class="se">\u0421\u0428\u0410</span><span class="s2">&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;zh-CN&quot;</span><span class="p">:</span> <span class="s2">&quot;</span><span class="se">\u7f8e\u56fd</span><span class="s2">&quot;</span>
+        <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;subdivisions&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;geoname_id&quot;</span><span class="p">:</span> <span class="mi">5332921</span><span class="p">,</span>
+            <span class="s2">&quot;iso_code&quot;</span><span class="p">:</span> <span class="s2">&quot;CA&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;names&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">&quot;de&quot;</span><span class="p">:</span> <span class="s2">&quot;Kalifornien&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;en&quot;</span><span class="p">:</span> <span class="s2">&quot;California&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;es&quot;</span><span class="p">:</span> <span class="s2">&quot;California&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;fr&quot;</span><span class="p">:</span> <span class="s2">&quot;Californie&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;ja&quot;</span><span class="p">:</span> <span class="s2">&quot;</span><span class="se">\u30ab\u30ea\u30d5\u30a9\u30eb\u30cb\u30a2\u5dde</span><span class="s2">&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;pt-BR&quot;</span><span class="p">:</span> <span class="s2">&quot;Calif</span><span class="se">\u00f3</span><span class="s2">rnia&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;ru&quot;</span><span class="p">:</span> <span class="s2">&quot;</span><span class="se">\u041a\u0430\u043b\u0438\u0444\u043e\u0440\u043d\u0438\u044f</span><span class="s2">&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;zh-CN&quot;</span><span class="p">:</span> <span class="s2">&quot;</span><span class="se">\u52a0\u5229\u798f\u5c3c\u4e9a\u5dde</span><span class="s2">&quot;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>The geolocation information for the host with localized names is in the response.</p>
+</div>
+<div class="section" id="details">
+<h2>Details<a class="headerlink" href="#details" title="Permalink to this headline">¶</a></h2>
+<p>The majority of the sample code is shown below:</p>
+<blockquote>
+<div><div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># Create the client</span>
+<span class="k">with</span> <span class="n">DxlClient</span><span class="p">(</span><span class="n">config</span><span class="p">)</span> <span class="k">as</span> <span class="n">client</span><span class="p">:</span>
+
+    <span class="c1"># Connect to the fabric</span>
+    <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span>
+
+    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Connected to DXL fabric.&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Create and send request</span>
+    <span class="n">request_topic</span> <span class="o">=</span> <span class="s2">&quot;/opendxl-maxmind/service/geolocation/host_lookup&quot;</span>
+    <span class="n">req</span> <span class="o">=</span> <span class="n">Request</span><span class="p">(</span><span class="n">request_topic</span><span class="p">)</span>
+    <span class="n">MessageUtils</span><span class="o">.</span><span class="n">dict_to_json_payload</span><span class="p">(</span><span class="n">req</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;ip&quot;</span><span class="p">:</span><span class="s2">&quot;8.8.8.8&quot;</span><span class="p">})</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">sync_request</span><span class="p">(</span><span class="n">req</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">res</span><span class="o">.</span><span class="n">message_type</span> <span class="o">!=</span> <span class="n">Message</span><span class="o">.</span><span class="n">MESSAGE_TYPE_ERROR</span><span class="p">:</span>
+        <span class="c1"># Display results</span>
+        <span class="n">res_dict</span> <span class="o">=</span> <span class="n">MessageUtils</span><span class="o">.</span><span class="n">json_payload_to_dict</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+        <span class="k">print</span> <span class="n">MessageUtils</span><span class="o">.</span><span class="n">dict_to_json</span><span class="p">(</span><span class="n">res_dict</span><span class="p">,</span> <span class="n">pretty_print</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">print</span> <span class="s2">&quot;Error invoking service with topic &#39;{0}&#39;: {1} ({2})&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+            <span class="n">request_topic</span><span class="p">,</span> <span class="n">res</span><span class="o">.</span><span class="n">error_message</span><span class="p">,</span> <span class="n">res</span><span class="o">.</span><span class="n">error_code</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>After connecting to the DXL fabric, a <cite>request message</cite> is created with a topic that targets the &#8220;host lookup&#8221; method
+of the MaxMind DXL service.</p>
+<p>The next step is to set the <cite>payload</cite> of the request message. The contents of the payload include the <cite>IP address</cite>
+to look up (in this case, 8.8.8.8, a google DNS IP).</p>
+<p>The final step is to perform a <cite>synchronous request</cite> via the DXL fabric. If the <cite>response message</cite> is not an error
+its contents are displayed.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Basic Host Lookup Example</a><ul>
+<li><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
+<li><a class="reference internal" href="#running">Running</a></li>
+<li><a class="reference internal" href="#details">Details</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="sampleconfig.html"
+                        title="previous chapter">Samples Configuration</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="dxlmaxmindservice.html"
+                        title="next chapter">dxlmaxmindservice package</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/basichostlookupexample.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="dxlmaxmindservice.html" title="dxlmaxmindservice package"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="sampleconfig.html" title="Samples Configuration"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">MaxMind Geolocation DXL Service 0.1.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2017, McAfee LLC.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.3.
+    </div>
+  </body>
+</html>

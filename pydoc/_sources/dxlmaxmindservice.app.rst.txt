@@ -1,0 +1,7 @@
+dxlmaxmindservice.app module
+============================
+
+.. automodule:: dxlmaxmindservice.app
+    :members:
+    :undoc-members:
+    :show-inheritance:

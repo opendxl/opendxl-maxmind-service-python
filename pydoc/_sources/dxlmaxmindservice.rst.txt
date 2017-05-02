@@ -1,0 +1,18 @@
+dxlmaxmindservice package
+=========================
+
+Submodules
+----------
+
+.. toctree::
+
+   dxlmaxmindservice.app
+   dxlmaxmindservice.requesthandlers
+
+Module contents
+---------------
+
+.. automodule:: dxlmaxmindservice
+    :members:
+    :undoc-members:
+    :show-inheritance:

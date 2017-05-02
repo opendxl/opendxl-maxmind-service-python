@@ -1,0 +1,233 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>dxlmaxmindservice.app module &#8212; MaxMind Geolocation DXL Service 0.1.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="dxlmaxmindservice.requesthandlers module" href="dxlmaxmindservice.requesthandlers.html" />
+    <link rel="prev" title="dxlmaxmindservice package" href="dxlmaxmindservice.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="dxlmaxmindservice.requesthandlers.html" title="dxlmaxmindservice.requesthandlers module"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="dxlmaxmindservice.html" title="dxlmaxmindservice package"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">MaxMind Geolocation DXL Service 0.1.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="dxlmaxmindservice.html" accesskey="U">dxlmaxmindservice package</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-dxlmaxmindservice.app">
+<span id="dxlmaxmindservice-app-module"></span><h1>dxlmaxmindservice.app module<a class="headerlink" href="#module-dxlmaxmindservice.app" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="dxlmaxmindservice.app.MaxMindDatabase">
+<em class="property">class </em><code class="descclassname">dxlmaxmindservice.app.</code><code class="descname">MaxMindDatabase</code><span class="sig-paren">(</span><em>update_interval</em>, <em>database_path</em><span class="sig-paren">)</span><a class="headerlink" href="#dxlmaxmindservice.app.MaxMindDatabase" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>A class to handle IP lookups and updating of the MaxMind Database</p>
+<p>Initializes the MaxMindDatabase</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>update_interval</strong> &#8211; The interval to update the MaxMind database in minutes</td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="dxlmaxmindservice.app.MaxMindDatabase.MAXMIND_FREE_DB_URL">
+<code class="descname">MAXMIND_FREE_DB_URL</code><em class="property"> = 'http://geolite.maxmind.com/download/geoip/database/GeoLite2-City.mmdb.gz'</em><a class="headerlink" href="#dxlmaxmindservice.app.MaxMindDatabase.MAXMIND_FREE_DB_URL" title="Permalink to this definition">¶</a></dt>
+<dd><p>The URL of the free MaxMind GeoLite database</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dxlmaxmindservice.app.MaxMindDatabase.lookup_ip">
+<code class="descname">lookup_ip</code><span class="sig-paren">(</span><em>ip</em><span class="sig-paren">)</span><a class="headerlink" href="#dxlmaxmindservice.app.MaxMindDatabase.lookup_ip" title="Permalink to this definition">¶</a></dt>
+<dd><p>Looks up an IP or hostname in the MaxMind database</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>ip</strong> &#8211; The IP or Hostname to look up</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">A dictionary of the MaxMind Database response</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="dxlmaxmindservice.app.MaxMindGeolocationService">
+<em class="property">class </em><code class="descclassname">dxlmaxmindservice.app.</code><code class="descname">MaxMindGeolocationService</code><span class="sig-paren">(</span><em>config_dir</em><span class="sig-paren">)</span><a class="headerlink" href="#dxlmaxmindservice.app.MaxMindGeolocationService" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">dxlbootstrap.app.Application</span></code></p>
+<p>The &#8220;MaxMind Geolocation Service&#8221; service class.</p>
+<p>Constructor parameters:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>config_dir</strong> &#8211; The location of the configuration files for the
+application</td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="dxlmaxmindservice.app.MaxMindGeolocationService.client">
+<code class="descname">client</code><a class="headerlink" href="#dxlmaxmindservice.app.MaxMindGeolocationService.client" title="Permalink to this definition">¶</a></dt>
+<dd><p>The DXL client used by the application to communicate with the DXL
+fabric</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="dxlmaxmindservice.app.MaxMindGeolocationService.config">
+<code class="descname">config</code><a class="headerlink" href="#dxlmaxmindservice.app.MaxMindGeolocationService.config" title="Permalink to this definition">¶</a></dt>
+<dd><p>The application configuration (as read from the &#8220;dxlmaxmindservice.config&#8221; file)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="dxlmaxmindservice.app.MaxMindGeolocationService.database">
+<code class="descname">database</code><a class="headerlink" href="#dxlmaxmindservice.app.MaxMindGeolocationService.database" title="Permalink to this definition">¶</a></dt>
+<dd><p>The MaxMind Database access object</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dxlmaxmindservice.app.MaxMindGeolocationService.destroy">
+<code class="descname">destroy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dxlmaxmindservice.app.MaxMindGeolocationService.destroy" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dxlmaxmindservice.app.MaxMindGeolocationService.on_dxl_connect">
+<code class="descname">on_dxl_connect</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dxlmaxmindservice.app.MaxMindGeolocationService.on_dxl_connect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Invoked after the client associated with the application has connected
+to the DXL fabric.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dxlmaxmindservice.app.MaxMindGeolocationService.on_load_configuration">
+<code class="descname">on_load_configuration</code><span class="sig-paren">(</span><em>config</em><span class="sig-paren">)</span><a class="headerlink" href="#dxlmaxmindservice.app.MaxMindGeolocationService.on_load_configuration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Invoked after the application-specific configuration has been loaded</p>
+<p>This callback provides the opportunity for the application to parse
+additional configuration properties.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>config</strong> &#8211; The application configuration</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="dxlmaxmindservice.app.MaxMindGeolocationService.on_register_services">
+<code class="descname">on_register_services</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dxlmaxmindservice.app.MaxMindGeolocationService.on_register_services" title="Permalink to this definition">¶</a></dt>
+<dd><p>Invoked when services should be registered with the application</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dxlmaxmindservice.app.MaxMindGeolocationService.on_run">
+<code class="descname">on_run</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dxlmaxmindservice.app.MaxMindGeolocationService.on_run" title="Permalink to this definition">¶</a></dt>
+<dd><p>Invoked when the application has started running.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="dxlmaxmindservice.html"
+                        title="previous chapter">dxlmaxmindservice package</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="dxlmaxmindservice.requesthandlers.html"
+                        title="next chapter">dxlmaxmindservice.requesthandlers module</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/dxlmaxmindservice.app.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="dxlmaxmindservice.requesthandlers.html" title="dxlmaxmindservice.requesthandlers module"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="dxlmaxmindservice.html" title="dxlmaxmindservice package"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">MaxMind Geolocation DXL Service 0.1.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="dxlmaxmindservice.html" >dxlmaxmindservice package</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2017, McAfee LLC.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.3.
+    </div>
+  </body>
+</html>
