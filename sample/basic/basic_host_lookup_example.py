@@ -1,3 +1,5 @@
+# This sample invokes and displays the results of a MaxMind "host lookup" via DXL.
+
 import os
 import sys
 

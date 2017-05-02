@@ -3,7 +3,8 @@
 
 ## Overview
 
-The MaxMind DXL Python service exposes IP geo-location lookups in a MaxMind GeoLite2 or GeoIP2 database via the Data Exchange Layer (DXL) fabric.
+The MaxMind DXL Python service exposes IP geo-location lookups in a MaxMind [GeoLite2](http://dev.maxmind.com/geoip/geoip2/geolite2/) or
+[GeoIP2](https://www.maxmind.com/en/geoip2-databases) database via the Data Exchange Layer (DXL) fabric.
 
 ## Documentation
 
