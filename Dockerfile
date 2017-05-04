@@ -4,7 +4,7 @@ FROM python:2.7-alpine
 # Install required packages
 RUN pip install "requests"
 RUN pip install "maxminddb"
-RUN pip install "dxlbootstrap==0.0.8"
+RUN pip install "dxlbootstrap"
 RUN pip install "dxlclient"
 
 # Build service
