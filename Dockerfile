@@ -4,10 +4,7 @@ FROM python:2.7-slim
 VOLUME ["/opt/dxlmaxmindservice-config"]
 
 # Install required packages
-RUN pip install "requests"
-RUN pip install "maxminddb"
-RUN pip install "dxlbootstrap"
-RUN pip install "dxlclient"
+RUN pip install "requests" "maxminddb" "dxlbootstrap>=0.1.3" "dxlclient"
 
 # Build service
 COPY . /tmp/build
