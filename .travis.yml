@@ -17,12 +17,6 @@ before_install:
 install:
   - pip install .
 
-before_script:
-  - python -m dxlclient provisionconfig dxlclient/test 127.0.0.1 client -u admin -p password
-  - cp dxlclient/test/dxlclient.config dxlclient/test/client_config.cfg
-  - sed -i -e "s/external/unique_broker_id_1/g" -e "/local/d" dxlclient/test/client_config.cfg
-  - cat dxlclient/test/client_config.cfg
-
 # command to run tests
 script:
   - python setup.py
