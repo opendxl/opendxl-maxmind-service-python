@@ -1,3 +1,4 @@
+from __future__ import absolute_import
 import tempfile
 import os
 import StringIO
@@ -9,7 +10,7 @@ import requests
 import maxminddb
 from dxlbootstrap.app import Application
 from dxlclient.service import ServiceRegistrationInfo
-from requesthandlers import *
+from .requesthandlers import *
 
 # Configure local logger
 logger = logging.getLogger(__name__)
