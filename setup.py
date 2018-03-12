@@ -32,7 +32,7 @@ class LintCommand(Command):
     def run(self):
         self.announce("Running pylint for library source files and tests",
                       level=distutils.log.INFO)
-        subprocess.check_call(["pylint", "dxlmaxmindservice"] +
+        subprocess.check_call(["pylint", "dxlmaxmindservice", "tests"] +
                               glob.glob("*.py"))
 
 

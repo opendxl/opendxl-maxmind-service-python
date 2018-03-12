@@ -2,9 +2,9 @@ from __future__ import absolute_import
 import logging
 import socket
 
+from dxlbootstrap.util import MessageUtils
 from dxlclient.callbacks import RequestCallback
 from dxlclient.message import Response, ErrorResponse
-from dxlbootstrap.util import MessageUtils
 
 
 # Configure local logger

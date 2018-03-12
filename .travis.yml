@@ -24,7 +24,10 @@ install:
   - python setup.py install
 
 before_script:
-  - python -m dxlclient provisionconfig dxlclient/test 127.0.0.1 client -u admin -p password
+  - python -m dxlclient provisionconfig sample 127.0.0.1 client -u admin -p password
+  - cat sample/dxlclient.config
+  - python -m dxlclient provisionconfig config 127.0.0.1 client -u admin -p password
+  - cat config/dxlclient.config
 
 # command to run tests
 script:
