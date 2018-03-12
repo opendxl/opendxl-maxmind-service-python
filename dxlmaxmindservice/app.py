@@ -1,7 +1,7 @@
 from __future__ import absolute_import
 import tempfile
 import os
-import StringIO
+from io import BytesIO
 import gzip
 import logging
 from threading import Timer
@@ -147,8 +147,7 @@ class MaxMindDatabase(object):
             response = requests.get(self.MAXMIND_FREE_DB_URL)
             response.raise_for_status()
             logger.info('Retrieved MaxMind database.')
-
-            data = gzip.GzipFile(fileobj=StringIO.StringIO(response.content))
+            data = gzip.GzipFile(fileobj=BytesIO(response.content))
 
             # Write the database to a temporary file
             fd, file_path = tempfile.mkstemp()
