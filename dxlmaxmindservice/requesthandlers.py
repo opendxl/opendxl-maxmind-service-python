@@ -35,8 +35,9 @@ class MaxMindHostLookupRequestCallback(RequestCallback):
         :param request: The request message
         """
         # Handle request
-        logger.info("Request received on topic: '{0}' with payload: '{1}'".format(
-            request.destination_topic, MessageUtils.decode_payload(request)))
+        logger.info("Request received on topic: '%s' with payload: '%s'",
+                    request.destination_topic,
+                    MessageUtils.decode_payload(request))
 
         try:
             # Retrieve the parameters from the request
@@ -49,7 +50,7 @@ class MaxMindHostLookupRequestCallback(RequestCallback):
 
             ipaddr = socket.gethostbyname(target)
 
-            logger.debug("IP to be located: " + ipaddr)
+            logger.debug("IP to be located: %s", ipaddr)
             # Lookup the IP/host
             results = self._app.database.lookup_ip(ipaddr)
             logger.debug(results)
@@ -65,5 +66,6 @@ class MaxMindHostLookupRequestCallback(RequestCallback):
 
         except Exception as ex:
             logger.exception("Error handling request")
-            err_res = ErrorResponse(request, error_code=0, error_message=MessageUtils.encode(str(ex)))
+            err_res = ErrorResponse(request, error_code=0,
+                                    error_message=MessageUtils.encode(str(ex)))
             self._app.client.send_response(err_res)

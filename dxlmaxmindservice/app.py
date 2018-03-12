@@ -65,8 +65,9 @@ class MaxMindGeolocationService(Application):
         logger.info("On 'load configuration' callback.")
 
         # Initialize the MaxMind Database
-        self._database = MaxMindDatabase(int(config.get('MaxMindDatabase', 'databaseUpdateInterval')),
-                                         config.get('MaxMindDatabase', 'databasePath'))
+        self._database = MaxMindDatabase(
+            int(config.get('MaxMindDatabase', 'databaseUpdateInterval')),
+            config.get('MaxMindDatabase', 'databasePath'))
 
     def on_dxl_connect(self):
         """
@@ -74,15 +75,15 @@ class MaxMindGeolocationService(Application):
         to the DXL fabric.
         """
         logger.info("On 'DXL connect' callback.")
-    
+
     def on_register_services(self):
         """
         Invoked when services should be registered with the application
         """
         # Register service 'maxmind_geolocation_service'
-        logger.info("Registering service: {0}".format("maxmind_geolocation_service"))
+        logger.info("Registering service: %s", "maxmind_geolocation_service")
         service = ServiceRegistrationInfo(self._dxl_client, "/opendxl-maxmind/service/geolocation")
-        logger.info("Registering request callback: {0}".format("maxmind_service_hostlookup"))
+        logger.info("Registering request callback: %s", "maxmind_service_hostlookup")
         self.add_request_callback(service, "/opendxl-maxmind/service/geolocation/host_lookup",
                                   MaxMindHostLookupRequestCallback(self), True)
         self.register_service(service)
@@ -125,6 +126,7 @@ class MaxMindDatabase(object):
             self._reader = None
             self._database_path = None
             self._database_checksum = None
+            self._response_checksum = None
             self._update_interval = update_interval
             self._update_database()
 
@@ -150,13 +152,13 @@ class MaxMindDatabase(object):
             data = gzip.GzipFile(fileobj=BytesIO(response.content))
 
             # Write the database to a temporary file
-            fd, file_path = tempfile.mkstemp()
-            with os.fdopen(fd, 'wb') as temp_file:
+            file_descriptor, file_path = tempfile.mkstemp()
+            with os.fdopen(file_descriptor, 'wb') as temp_file:
                 temp_file.write(data.read())
 
             self._swap_database(file_path)
             logger.info("MaxMind database updated.")
-        except:
+        except Exception:
             logger.exception("Failed to update MaxMind database.")
         finally:
             # Schedule this function to run again in the configured update interval
@@ -173,10 +175,11 @@ class MaxMindDatabase(object):
 
         # Retrieve the headers of the response to compare the MD5 checksums of the file
         headers_response = requests.head(self.MAXMIND_FREE_DB_URL)
-        logger.debug(headers_response.headers)
+        logger.debug("%s", headers_response.headers)
         headers_response.raise_for_status()
         response_checksum = headers_response.headers.get('X-Database-MD5')
-        logger.info("Database MD5 received in response headers: " + str(response_checksum))
+        logger.info("Database MD5 received in response headers: %s",
+                    response_checksum)
         # Compare the current file checksum to the one received from MaxMind
         if response_checksum is not None and response_checksum == self._database_checksum:
             return False
@@ -195,11 +198,11 @@ class MaxMindDatabase(object):
         # Delete the temporary new database file
         try:
             os.remove(new_database_path)
-        except:
+        except Exception:
             logger.exception("Failed to remove old database file.")
         self._database_checksum = self._response_checksum
 
-    def lookup_ip(self, ip):
+    def lookup_ip(self, ip): # pylint: disable=invalid-name
         """
         Looks up an IP or hostname in the MaxMind database
 
