@@ -79,6 +79,6 @@ with MaxMindGeolocationService(sys.argv[1]) as app:
 
     except KeyboardInterrupt:
         pass
-    except Exception:
+    except: # pylint: disable=bare-except
         logger.exception("Error occurred, exiting")
         sys.exit(1)

@@ -10,12 +10,14 @@ def clean_dir(src_dir, directory):
     if os.path.exists(directory):
         print("Cleaning directory: " + directory + "\n")
         for f in os.listdir(directory):
-            if not os.path.isdir(os.path.join(directory, f)) and not f.lower().endswith(".py"):
+            target_file = os.path.join(directory, f)
+            if not os.path.isdir(target_file) and not f.lower().endswith(".py"):
                 os.remove(os.path.join(directory, f))
         for f in os.listdir(src_dir):
-            if not os.path.isdir(f) and \
+            src_file = os.path.join(src_dir, f)
+            if not os.path.isdir(src_file) and \
                     not(f.lower().endswith(".py") or f.lower().endswith(".pyc")):
-                copyfile(os.path.join(src_dir, f), os.path.join(directory, f))
+                copyfile(src_file, os.path.join(directory, f))
 
 print("Starting clean.\n")
 
@@ -23,8 +25,10 @@ DIST_PY_FILE_LOCATION = os.path.dirname(os.path.realpath(__file__))
 DIST_DIRECTORY = os.path.join(DIST_PY_FILE_LOCATION, "dist")
 CONFIG_DIRECTORY = os.path.join(DIST_PY_FILE_LOCATION, "config")
 SAMPLE_DIRECTORY = os.path.join(DIST_PY_FILE_LOCATION, "sample")
-CONFIG_SRC_DIRECTORY = os.path.join(DIST_PY_FILE_LOCATION, "dxlmaxmindservice", "_config", "app")
-SAMPLE_SRC_DIRECTORY = os.path.join(DIST_PY_FILE_LOCATION, "dxlmaxmindservice", "_config", "sample")
+CONFIG_SRC_DIRECTORY = os.path.join(DIST_PY_FILE_LOCATION, "dxlmaxmindservice",
+                                    "_config", "app")
+SAMPLE_SRC_DIRECTORY = os.path.join(DIST_PY_FILE_LOCATION, "dxlmaxmindservice",
+                                    "_config", "sample")
 
 # Remove the dist directory if it exists
 if os.path.exists(DIST_DIRECTORY):
