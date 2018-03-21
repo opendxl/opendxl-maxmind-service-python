@@ -3,16 +3,12 @@ FROM python:2.7-slim
 
 VOLUME ["/opt/dxlmaxmindservice-config"]
 
-# Install required packages
-RUN pip install "requests" "maxminddb" "dxlbootstrap>=0.1.3" "dxlclient"
-
 # Build service
 COPY . /tmp/build
 WORKDIR /tmp/build
-RUN python ./setup.py bdist_wheel
 
-# Install service
-RUN pip install dist/*.whl
+# Install application package and its dependencies
+RUN pip install .
 
 # Cleanup build
 RUN rm -rf /tmp/build
