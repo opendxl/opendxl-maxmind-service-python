@@ -131,7 +131,8 @@ disable=print-statement,
         wildcard-import,
         broad-except,
         too-few-public-methods,
-        missing-docstring
+        missing-docstring,
+        useless-object-inheritance
 
 
 # Enable the message, report, category or checker with the given id(s). You can
