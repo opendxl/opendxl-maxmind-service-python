@@ -6,17 +6,13 @@
 [![Docker Build Status](https://img.shields.io/docker/build/opendxl/opendxl-maxmind-service-python.svg)](https://hub.docker.com/r/opendxl/opendxl-maxmind-service-python/)
 
 ## Overview
-
-The MaxMind DXL Python service exposes Host/IP Geolocation lookups in a MaxMind [GeoLite2](http://dev.maxmind.com/geoip/geoip2/geolite2/) or
-[GeoIP2](https://www.maxmind.com/en/geoip2-databases) database via the Data Exchange Layer (DXL) fabric.
+The MaxMind DXL Python service exposes Host/IP Geolocation lookups in a MaxMind [GeoLite2](http://dev.maxmind.com/geoip/geoip2/geolite2/) or [GeoIP2](https://www.maxmind.com/en/geoip2-databases) database via the Data Exchange Layer (DXL) fabric.
 
 ## Documentation
 
-See the [Wiki](https://github.com/opendxl/opendxl-maxmind-service-python/wiki) for an overview of the
-MaxMind DXL Python service and usage examples.
+See the [Wiki](https://github.com/opendxl/opendxl-maxmind-service-python/wiki) for an overview of the MaxMind DXL Python service and usage examples.
 
-See the [MaxMind API DXL Python service documentation](https://opendxl.github.io/opendxl-maxmind-service-python/pydoc) for
-installation instructions, API documentation, and usage examples.
+See the [MaxMind API DXL Python service documentation](https://opendxl.github.io/opendxl-maxmind-service-python/pydoc) for installation instructions, API documentation, and usage examples.
 
 ## Installation
 
@@ -29,8 +25,7 @@ To start using the MaxMind DXL Python Service:
 
 ## Docker Support
 
-A pre-built Docker image can be used as an alternative to installing a Python environment with the
-modules required for the MaxMind DXL service.
+A pre-built Docker image can be used as an alternative to installing a Python environment with the modules required for the MaxMind DXL service.
 
 See the [Docker Support Documentation](https://opendxl.github.io/opendxl-maxmind-service-python/pydoc/docker.html) for details.
 
