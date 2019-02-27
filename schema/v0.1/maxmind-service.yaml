@@ -14,7 +14,7 @@ solutions:
       description: 'The MaxMind DXL Service.'
     externalDocs:
       description: 'MaxMind API Reference'
-      url: 'https://www.maxmind.com/api/'
+      url: 'https://dev.maxmind.com/geoip/geoip2/web-services/#Product_Information'
     services:
       -
         $ref: '#/services/MaxMind DXL Service'
@@ -31,7 +31,6 @@ services:
     requests:
       -
         $ref: '#/requests/~1opendxl-maxmind~1service~1geolocation~1host_lookup'
-events: null
 requests:
   /opendxl-maxmind/service/geolocation/host_lookup:
     description: 'Invokes a MaxMind Host/IP geolocation lookup and returns the results.'
@@ -45,7 +44,7 @@ requests:
       example:
         host: 8.8.8.8
     response:
-      description: 'A JSON structure representing the Geolocation information for the specified host/IP. See the <a href=''https://maxminddb.readthedocs.io/en/latest/''>MaxMind DB Python Module</a> for more information.'
+      description: 'A JSON structure representing the Geolocation information for the specified host/IP. See the <a href=''https://dev.maxmind.com/geoip/geoip2/web-services/#Response_Body''>MaxMind GeoIP2 Precision Web Services API</a> for more information.'
       payload:
         example:
           continent:
