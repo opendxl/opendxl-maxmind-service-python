@@ -92,7 +92,7 @@ requests:
         payload:
           $ref: '#/definitions/Error Response Object'
 definitions:
-  '0':
+  'Error Response Object':
     properties:
       errorMessage:
         description: 'Message string containing error information.'
