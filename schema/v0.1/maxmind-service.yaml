@@ -88,7 +88,7 @@ requests:
               ru: США
               zh-CN: 美国
     errorResponses:
-      'Service Error':
+      '0':
         payload:
           $ref: '#/definitions/Error Response Object'
 definitions:
