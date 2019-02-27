@@ -1,110 +1,101 @@
----
 openDxlApi: '0.1'
 info:
-  title: MaxMind Geolocation DXL Service
+  title: 'MaxMind Geolocation DXL Service'
   version: 0.1.0
-  description: The MaxMind DXL Python service exposes Host/IP Geolocation lookups
-    in a MaxMind <a href='http://dev.maxmind.com/geoip/geoip2/geolite2/'>GeoLite2</a>
-    or <a href='https://www.maxmind.com/en/geoip2-databases'>GeoIP2</a> database via
-    the  <a href='http://www.mcafee.com/us/solutions/data-exchange-layer.aspx'>Data
-    Exchange Layer</a> (DXL) fabric.
+  description: 'The MaxMind DXL Python service exposes Host/IP Geolocation lookups in a MaxMind <a href=''http://dev.maxmind.com/geoip/geoip2/geolite2/''>GeoLite2</a> or <a href=''https://www.maxmind.com/en/geoip2-databases''>GeoIP2</a> database via the  <a href=''http://www.mcafee.com/us/solutions/data-exchange-layer.aspx''>Data Exchange Layer</a> (DXL) fabric.'
   contact:
     name: OpenDXL
-    url: https://www.opendxl.com
+    url: 'https://www.opendxl.com'
 solutions:
-  MaxMind Geolocation DXL Service:
+  'MaxMind Geolocation DXL Service':
     info:
-      title: MaxMind Geolocation DXL Service
+      title: 'MaxMind Geolocation DXL Service'
       version: 0.2.0
-      description: The MaxMind DXL Service.
+      description: 'The MaxMind DXL Service.'
     externalDocs:
-      description: MaxMind Developer Documentation
-      url: https://dev.maxmind.com/
+      description: 'MaxMind API Reference'
+      url: 'https://www.maxmind.com/api/'
     services:
-    - "$ref": "#/services/MaxMind Geolocation DXL Service"
+      -
+        $ref: '#/services/MaxMind DXL Service'
     events: []
 services:
-  MaxMind Geolocation DXL Service:
+  'MaxMind Geolocation DXL Service':
     info:
-      title: MaxMind Geolocation DXL Service
+      title: 'MaxMind Geolocation DXL Service'
       version: 0.2.0
-      description: The MaxMind DXL Python service exposes Host/IP Geolocation lookups
-        in a MaxMind <a href='http://dev.maxmind.com/geoip/geoip2/geolite2/'>GeoLite2</a>
-        or <a href='https://www.maxmind.com/en/geoip2-databases'>GeoIP2</a> database
-        via the  <a href='http://www.mcafee.com/us/solutions/data-exchange-layer.aspx'>Data
-        Exchange Layer</a> (DXL) fabric.
+      description: 'The MaxMind DXL Python service exposes Host/IP Geolocation lookups in a MaxMind <a href=''http://dev.maxmind.com/geoip/geoip2/geolite2/''>GeoLite2</a> or <a href=''https://www.maxmind.com/en/geoip2-databases''>GeoIP2</a> database via the  <a href=''http://www.mcafee.com/us/solutions/data-exchange-layer.aspx''>Data Exchange Layer</a> (DXL) fabric.'
     externalDocs:
-      description: MaxMind DXL Python Service (GitHub)
-      url: https://github.com/opendxl/opendxl-maxmind-service-python
+      description: 'MaxMind DXL Python Service (GitHub)'
+      url: 'https://github.com/opendxl/opendxl-maxmind-service-python'
     requests:
-    - "$ref": "#/requests/~1opendxl-maxmind~1service~1geolocation~1host_lookup"
-events: {}
+      -
+        $ref: '#/requests/~1opendxl-maxmind~1service~1geolocation~1host_lookup'
+events: null
 requests:
-  "/opendxl-maxmind/service/geolocation/host_lookup":
-    description: Invokes a MaxMind Host/IP geolocation lookup and returns the results.
+  /opendxl-maxmind/service/geolocation/host_lookup:
+    description: 'Invokes a MaxMind Host/IP geolocation lookup and returns the results.'
     payload:
       properties:
         host:
-          description: Hostname or IP address for which to retrieve Geolocation information.
+          description: 'Hostname or IP address for which to retrieve Geolocation information.'
           type: string
       required:
-      - host
+        - host
       example:
         host: 8.8.8.8
     response:
-      description: A JSON structure representing the Geolocation information for the
-        specified host/IP. See the <a href='https://maxminddb.readthedocs.io/en/latest/'>MaxMind
-        DB Python Module</a> for more information.
-      example:
-        continent:
-          code: NA
-          geoname_id: 6255149
-          names:
-            de: Nordamerika
-            en: North America
-            es: Norteamérica
-            fr: Amérique du Nord
-            ja: 北アメリカ
-            pt-BR: América do Norte
-            ru: Северная Америка
-            zh-CN: 北美洲
-        country:
-          geoname_id: 6252001
-          iso_code: US
-          names:
-            de: USA
-            en: United States
-            es: Estados Unidos
-            fr: États-Unis
-            ja: アメリカ合衆国
-            pt-BR: Estados Unidos
-            ru: США
-            zh-CN: 美国
-        location:
-          accuracy_radius: 1000
-          latitude: 37.751
-          longitude: -97.822
-        registered_country:
-          geoname_id: 6252001
-          iso_code: US
-          names:
-            de: USA
-            en: United States
-            es: Estados Unidos
-            fr: États-Unis
-            ja: アメリカ合衆国
-            pt-BR: Estados Unidos
-            ru: США
-            zh-CN: 美国
+      description: 'A JSON structure representing the Geolocation information for the specified host/IP. See the <a href=''https://maxminddb.readthedocs.io/en/latest/''>MaxMind DB Python Module</a> for more information.'
+      payload:
+        example:
+          continent:
+            code: NA
+            geoname_id: 6255149
+            names:
+              de: Nordamerika
+              en: 'North America'
+              es: Norteamérica
+              fr: 'Amérique du Nord'
+              ja: 北アメリカ
+              pt-BR: 'América do Norte'
+              ru: 'Северная Америка'
+              zh-CN: 北美洲
+          country:
+            geoname_id: 6252001
+            iso_code: US
+            names:
+              de: USA
+              en: 'United States'
+              es: 'Estados Unidos'
+              fr: États-Unis
+              ja: アメリカ合衆国
+              pt-BR: 'Estados Unidos'
+              ru: США
+              zh-CN: 美国
+          location:
+            accuracy_radius: 1000
+            latitude: 37.751
+            longitude: -97.822
+          registered_country:
+            geoname_id: 6252001
+            iso_code: US
+            names:
+              de: USA
+              en: 'United States'
+              es: 'Estados Unidos'
+              fr: États-Unis
+              ja: アメリカ合衆国
+              pt-BR: 'Estados Unidos'
+              ru: США
+              zh-CN: 美国
     errorResponses:
-      Service Error:
+      'Service Error':
         payload:
-          "$ref": "#/definitions/Error Response Object"
+          $ref: '#/definitions/Error Response Object'
 definitions:
   '0':
     properties:
       errorMessage:
-        description: Message string containing error information.
+        description: 'Message string containing error information.'
         type: string
-    example: 'Error invoking service with topic ''/opendxl-maxmind/service/geolocation/host_lookup'':
-      argument 1 must be string, not int'
+    example: 'Error invoking service with topic ''/opendxl-maxmind/service/geolocation/host_lookup'': argument 1 must be string, not int'
