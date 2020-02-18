@@ -2,7 +2,7 @@ from __future__ import absolute_import
 import tempfile
 import os
 from io import BytesIO
-import gzip
+import tarfile
 import logging
 from threading import Timer
 
@@ -67,7 +67,8 @@ class MaxMindGeolocationService(Application):
         # Initialize the MaxMind Database
         self._database = MaxMindDatabase(
             int(config.get('MaxMindDatabase', 'databaseUpdateInterval')),
-            config.get('MaxMindDatabase', 'databasePath'))
+            config.get('MaxMindDatabase', 'databasePath'),
+            config.get('MaxMindDatabase', 'licenseKey'))
 
     def on_dxl_connect(self):
         """
@@ -105,14 +106,13 @@ class MaxMindDatabase(object):
     A class to handle IP lookups and updating of the MaxMind Database
     """
 
-    #: The URL of the free MaxMind GeoLite database
-    MAXMIND_FREE_DB_URL = 'http://geolite.maxmind.com/download/geoip/database/GeoLite2-City.mmdb.gz'
-
-    def __init__(self, update_interval, database_path):
+    def __init__(self, update_interval, database_path, license_key):
         """
         Initializes the MaxMindDatabase
 
         :param update_interval: The interval to update the MaxMind database in minutes
+        :param database_path: The path to a local MaxMind database to be used
+        :param license_key: A MaxMind license key
         """
         if database_path is not None and database_path != "":
             logger.info("Local database specified. Updates will not be automatically downloaded.")
@@ -122,6 +122,13 @@ class MaxMindDatabase(object):
             self._database_path = database_path
             self._reader = maxminddb.open_database(database_path, maxminddb.const.MODE_MEMORY)
         else:
+            if license_key is None or license_key == "":
+                raise Exception("A MaxMind license key must be specified.")
+            self._license_key = license_key
+            self._database_url = (
+                "http://download.maxmind.com/app/geoip_download" +
+                "?edition_id=GeoLite2-City&license_key=" +
+                license_key + "&suffix=tar.gz")
             self._download_database = True
             self._reader = None
             self._database_path = None
@@ -146,15 +153,20 @@ class MaxMindDatabase(object):
                 return
 
             logger.info("Retrieving MaxMind Database...")
-            response = requests.get(self.MAXMIND_FREE_DB_URL)
+            response = requests.get(self._database_url)
             response.raise_for_status()
             logger.info('Retrieved MaxMind database.')
-            data = gzip.GzipFile(fileobj=BytesIO(response.content))
 
             # Write the database to a temporary file
             file_descriptor, file_path = tempfile.mkstemp()
-            with os.fdopen(file_descriptor, 'wb') as temp_file:
-                temp_file.write(data.read())
+
+            # Find the database in the TAR file
+            with tarfile.open(fileobj=BytesIO(response.content), mode="r:gz") as tar:
+                for member in tar.getmembers():
+                    if member.name.upper().endswith(".MMDB"):
+                        with os.fdopen(file_descriptor, 'wb') as temp_file:
+                            temp_file.write(tar.extractfile(member.name).read())
+                        break
 
             self._swap_database(file_path)
             logger.info("MaxMind database updated.")
@@ -174,11 +186,10 @@ class MaxMindDatabase(object):
         """
 
         # Retrieve the headers of the response to compare the MD5 checksums of the file
-        headers_response = requests.head(self.MAXMIND_FREE_DB_URL)
-        logger.debug("%s", headers_response.headers)
-        headers_response.raise_for_status()
-        response_checksum = headers_response.headers.get('X-Database-MD5')
-        logger.info("Database MD5 received in response headers: %s",
+        response = requests.get(self._database_url + ".md5")
+        response.raise_for_status()
+        response_checksum = response.content
+        logger.info("Database MD5 received: %s",
                     response_checksum)
         # Compare the current file checksum to the one received from MaxMind
         if response_checksum is not None and response_checksum == self._database_checksum:
