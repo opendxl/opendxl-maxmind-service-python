@@ -55,11 +55,15 @@ MaxMind Geolocation Service (dxlmaxmindservice.config)
 
             [MaxMindDatabase]
 
+            # A MaxMind license key
+            # If left blank, databasePath must be specified
+            licenseKey=
+
             # The path to a local MaxMind database to be used
-            # If left blank the free MaxMind GeoLite database will be automatically downloaded and updated
+            # If left blank the database will be automatically downloaded and updated
             databasePath=
 
-            # The number of hours between database updates when downloading the GeoLite database from MaxMind
+            # The number of hours between database updates when downloading the database
             # Only takes effect if the databasePath is not set
             databaseUpdateInterval=24
 
@@ -70,11 +74,14 @@ MaxMind Geolocation Service (dxlmaxmindservice.config)
         +------------------------+----------+----------------------------------------------------------------------+
         | Name                   | Required | Description                                                          |
         +========================+==========+======================================================================+
-        | databasePath           | no       | The path to a local MaxMind database. If left blank the database     |
-        |                        |          | will automatically be downloaded from MaxMind.                       |
+        | licenseKey             | no       | A MaxMind license key. If left blank, databasePath must be           |
+        |                        |          | specified.                                                           |
         +------------------------+----------+----------------------------------------------------------------------+
-        | databaseUpdateInterval | no       | The interval (in hours) to check for updates to the MaxMind database.|
-        |                        |          | Updates only happen if the database is being downloaded from MaxMind.|
+        | databasePath           | no       | The path to a local MaxMind database. If left blank, the database    |
+        |                        |          | specified will automatically be downloaded and updated.              |
+        +------------------------+----------+----------------------------------------------------------------------+
+        | databaseUpdateInterval | no       | The interval (in hours) to check for updates to the database.        |
+        |                        |          | Updates only occur if the database is being downloaded.              |
         +------------------------+----------+----------------------------------------------------------------------+
 
 Logging File (logging.config)

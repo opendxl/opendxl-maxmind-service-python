@@ -6,13 +6,16 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>dxlmaxmindservice.app module &#8212; MaxMind Geolocation DXL Service 0.2.0 documentation</title>
+    <title>dxlmaxmindservice.app module &#8212; MaxMind Geolocation DXL Service 0.2.1 documentation</title>
     <link rel="stylesheet" href="_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script type="text/javascript" src="_static/documentation_options.js"></script>
+    
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="dxlmaxmindservice.requesthandlers module" href="dxlmaxmindservice.requesthandlers.html" />
@@ -33,7 +36,7 @@
         <li class="right" >
           <a href="dxlmaxmindservice.html" title="dxlmaxmindservice package"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">MaxMind Geolocation DXL Service 0.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">MaxMind Geolocation DXL Service 0.2.1 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="dxlmaxmindservice.html" accesskey="U">dxlmaxmindservice package</a> &#187;</li> 
       </ul>
     </div>  
@@ -47,7 +50,7 @@
 <span id="dxlmaxmindservice-app-module"></span><h1>dxlmaxmindservice.app module<a class="headerlink" href="#module-dxlmaxmindservice.app" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="dxlmaxmindservice.app.MaxMindDatabase">
-<em class="property">class </em><code class="descclassname">dxlmaxmindservice.app.</code><code class="descname">MaxMindDatabase</code><span class="sig-paren">(</span><em>update_interval</em>, <em>database_path</em><span class="sig-paren">)</span><a class="headerlink" href="#dxlmaxmindservice.app.MaxMindDatabase" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">dxlmaxmindservice.app.</code><code class="descname">MaxMindDatabase</code><span class="sig-paren">(</span><em>update_interval</em>, <em>database_path</em>, <em>license_key</em><span class="sig-paren">)</span><a class="headerlink" href="#dxlmaxmindservice.app.MaxMindDatabase" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>A class to handle IP lookups and updating of the MaxMind Database</p>
 <p>Initializes the MaxMindDatabase</p>
@@ -55,16 +58,15 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>update_interval</strong> -- The interval to update the MaxMind database in minutes</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>update_interval</strong> -- The interval to update the MaxMind database in minutes</li>
+<li><strong>database_path</strong> -- The path to a local MaxMind database to be used</li>
+<li><strong>license_key</strong> -- A MaxMind license key</li>
+</ul>
+</td>
 </tr>
 </tbody>
 </table>
-<dl class="attribute">
-<dt id="dxlmaxmindservice.app.MaxMindDatabase.MAXMIND_FREE_DB_URL">
-<code class="descname">MAXMIND_FREE_DB_URL</code><em class="property"> = 'http://geolite.maxmind.com/download/geoip/database/GeoLite2-City.mmdb.gz'</em><a class="headerlink" href="#dxlmaxmindservice.app.MaxMindDatabase.MAXMIND_FREE_DB_URL" title="Permalink to this definition">¶</a></dt>
-<dd><p>The URL of the free MaxMind GeoLite database</p>
-</dd></dl>
-
 <dl class="method">
 <dt id="dxlmaxmindservice.app.MaxMindDatabase.lookup_ip">
 <code class="descname">lookup_ip</code><span class="sig-paren">(</span><em>ip</em><span class="sig-paren">)</span><a class="headerlink" href="#dxlmaxmindservice.app.MaxMindDatabase.lookup_ip" title="Permalink to this definition">¶</a></dt>
@@ -212,13 +214,13 @@ additional configuration properties.</p>
         <li class="right" >
           <a href="dxlmaxmindservice.html" title="dxlmaxmindservice package"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">MaxMind Geolocation DXL Service 0.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">MaxMind Geolocation DXL Service 0.2.1 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="dxlmaxmindservice.html" >dxlmaxmindservice package</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2018, McAfee LLC.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.4.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.5.
     </div>
   </body>
 </html>

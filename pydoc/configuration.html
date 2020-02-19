@@ -6,13 +6,16 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Configuration &#8212; MaxMind Geolocation DXL Service 0.2.0 documentation</title>
+    <title>Configuration &#8212; MaxMind Geolocation DXL Service 0.2.1 documentation</title>
     <link rel="stylesheet" href="_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script type="text/javascript" src="_static/documentation_options.js"></script>
+    
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Running" href="running.html" />
@@ -33,7 +36,7 @@
         <li class="right" >
           <a href="installation.html" title="Installation"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">MaxMind Geolocation DXL Service 0.2.0 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">MaxMind Geolocation DXL Service 0.2.1 documentation</a> &#187;</li> 
       </ul>
     </div>  
 
@@ -88,11 +91,15 @@ page for more information.</p>
 <blockquote>
 <div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">MaxMindDatabase</span><span class="p">]</span>
 
+<span class="c1"># A MaxMind license key</span>
+<span class="c1"># If left blank, databasePath must be specified</span>
+<span class="n">licenseKey</span><span class="o">=</span>
+
 <span class="c1"># The path to a local MaxMind database to be used</span>
-<span class="c1"># If left blank the free MaxMind GeoLite database will be automatically downloaded and updated</span>
+<span class="c1"># If left blank the database will be automatically downloaded and updated</span>
 <span class="n">databasePath</span><span class="o">=</span>
 
-<span class="c1"># The number of hours between database updates when downloading the GeoLite database from MaxMind</span>
+<span class="c1"># The number of hours between database updates when downloading the database</span>
 <span class="c1"># Only takes effect if the databasePath is not set</span>
 <span class="n">databaseUpdateInterval</span><span class="o">=</span><span class="mi">24</span>
 </pre></div>
@@ -114,15 +121,20 @@ page for more information.</p>
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td>databasePath</td>
+<tr class="row-even"><td>licenseKey</td>
 <td>no</td>
-<td>The path to a local MaxMind database. If left blank the database
-will automatically be downloaded from MaxMind.</td>
+<td>A MaxMind license key. If left blank, databasePath must be
+specified.</td>
 </tr>
-<tr class="row-odd"><td>databaseUpdateInterval</td>
+<tr class="row-odd"><td>databasePath</td>
 <td>no</td>
-<td>The interval (in hours) to check for updates to the MaxMind database.
-Updates only happen if the database is being downloaded from MaxMind.</td>
+<td>The path to a local MaxMind database. If left blank, the database
+specified will automatically be downloaded and updated.</td>
+</tr>
+<tr class="row-even"><td>databaseUpdateInterval</td>
+<td>no</td>
+<td>The interval (in hours) to check for updates to the database.
+Updates only occur if the database is being downloaded.</td>
 </tr>
 </tbody>
 </table>
@@ -142,7 +154,7 @@ Updates only happen if the database is being downloaded from MaxMind.</td>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="index.html">Table Of Contents</a></h3>
+  <h3><a href="index.html">Table of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">Configuration</a><ul>
 <li><a class="reference internal" href="#dxl-client-configuration-file-dxlclient-config">DXL Client Configuration File (dxlclient.config)</a></li>
@@ -196,12 +208,12 @@ Updates only happen if the database is being downloaded from MaxMind.</td>
         <li class="right" >
           <a href="installation.html" title="Installation"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">MaxMind Geolocation DXL Service 0.2.0 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">MaxMind Geolocation DXL Service 0.2.1 documentation</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2018, McAfee LLC.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.4.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.5.
     </div>
   </body>
 </html>
