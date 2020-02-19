@@ -2,7 +2,7 @@
 [![OpenDXL Bootstrap](https://img.shields.io/badge/Built%20With-OpenDXL%20Bootstrap-blue.svg)](https://github.com/opendxl/opendxl-bootstrap-python)
 [![Latest PyPI Version](https://img.shields.io/pypi/v/dxlmaxmindservice.svg)](https://pypi.python.org/pypi/dxlmaxmindservice)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-[![Actions Status](https://github.com/chrissmith-mcafee/opendxl-maxmind-service-python/workflows/Build/badge.svg)](https://github.com/chrissmith-mcafee/opendxl-maxmind-service-python/actions)
+[![Actions Status](https://github.com/opendxl/opendxl-maxmind-service-python/workflows/Build/badge.svg)](https://github.com/opendxl/opendxl-maxmind-service-python/actions)
 [![Docker Build Status](https://img.shields.io/docker/build/opendxl/opendxl-maxmind-service-python.svg)](https://hub.docker.com/r/opendxl/opendxl-maxmind-service-python/)
 
 ## Overview
