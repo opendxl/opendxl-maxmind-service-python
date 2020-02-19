@@ -3,3 +3,8 @@ dist/
 *.pyc
 build/
 dxlmaxmindservice.egg-info/
+*.csr
+*.crt
+*.key
+.vscode
+dxlclient.config
