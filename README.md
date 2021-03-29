@@ -3,7 +3,7 @@
 [![Latest PyPI Version](https://img.shields.io/pypi/v/dxlmaxmindservice.svg)](https://pypi.python.org/pypi/dxlmaxmindservice)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![Actions Status](https://github.com/opendxl/opendxl-maxmind-service-python/workflows/Build/badge.svg)](https://github.com/opendxl/opendxl-maxmind-service-python/actions)
-[![Docker Build Status](https://img.shields.io/docker/build/opendxl/opendxl-maxmind-service-python.svg)](https://hub.docker.com/r/opendxl/opendxl-maxmind-service-python/)
+[![Docker Build Status](https://img.shields.io/docker/cloud/build/opendxl/opendxl-maxmind-service-python.svg)](https://hub.docker.com/r/opendxl/opendxl-maxmind-service-python/)
 
 ## Overview
 The MaxMind DXL Python service exposes Host/IP Geolocation lookups in a MaxMind [GeoLite2](http://dev.maxmind.com/geoip/geoip2/geolite2/) or [GeoIP2](https://www.maxmind.com/en/geoip2-databases) database via the Data Exchange Layer (DXL) fabric.
