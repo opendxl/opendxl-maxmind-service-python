@@ -126,7 +126,7 @@ class MaxMindDatabase(object):
                 raise Exception("A MaxMind license key must be specified.")
             self._license_key = license_key
             self._database_url = (
-                "http://download.maxmind.com/app/geoip_download" +
+                "https://download.maxmind.com/app/geoip_download" +
                 "?edition_id=GeoLite2-City&license_key=" +
                 license_key + "&suffix=tar.gz")
             self._download_database = True
